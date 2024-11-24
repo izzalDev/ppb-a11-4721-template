@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "dart-code.flutter",
+        "github.vscode-github-actions",
+        "alexisvt.flutter-snippets",
+        "onatm.open-in-new-window",
+        "chrisdias.vscode-opennewinstance",
+    ]
+}
