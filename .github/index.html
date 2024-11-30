@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+  </head>
+  <body class="bg-gray-100 dark:bg-gray-900">
+    <div
+      x-data="fileManager()"
+      x-init="loadFiles()"
+      class="max-w-xl mx-auto mt-10 px-4"
+    >
+      <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
+        <h1 class="text-2xl font-bold text-center mb-6 text-gray-900 dark:text-white">
+          DOKUMENTASI PPB_A11.4721
+        </h1>
+
+        <div x-show="loading" class="text-center text-gray-500 py-4">
+          Loading files...
+        </div>
+
+        <div x-show="error" class="text-center text-red-500 py-4">
+          <span x-text="error"></span>
+        </div>
+
+        <div class="overflow-auto max-h-full" x-show="!loading && !error">
+          <!-- List of files -->
+          <ul class="space-y-3" x-show="files.length > 0">
+            <template x-for="(file, index) in files" :key="file.name">
+              <li
+                x-data="{ hovered: false }"
+                class="bg-gray-200 dark:bg-gray-700 p-3 rounded-md flex justify-between items-center"
+                :class="{ 'hover:bg-gray-300 dark:hover:bg-gray-600': hovered }"
+                @mouseover="hovered = true"
+                @mouseleave="hovered = false"
+              >
+                <a :href="file.name" class="flex w-full justify-between items-center">
+                  <span class="font-medium dark:text-white" x-text="file.name"></span>
+                  <div class="flex items-center space-x-2">
+                    <span class="text-sm text-gray-500 dark:text-gray-400" x-text="'Size: ' + file.size"></span>
+                  </div>
+                </a>
+              </li>
+            </template>
+          </ul>
+
+          <!-- No files message -->
+          <p x-show="files.length === 0" class="text-center text-gray-500 italic dark:text-gray-400">
+            No files added yet
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function fileManager() {
+        return {
+          files: [],
+          loading: true,
+          error: null,
+
+          async loadFiles() {
+            try {
+              // Replace this URL with the path to your actual JSON file
+              const response = await fetch("files.json");
+
+              if (!response.ok) {
+                throw new Error("Network response was not ok");
+              }
+
+              this.files = await response.json();
+              this.loading = false;
+            } catch (err) {
+              this.error = `Failed to load files: ${err.message}`;
+              this.loading = false;
+            }
+          },
+        };
+      }
+    </script>
+  </body>
+</html>

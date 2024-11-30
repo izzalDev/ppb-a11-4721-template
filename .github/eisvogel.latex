@@ -395,7 +395,7 @@ $if(graphics)$
 \newsavebox\pandoc@box
 \newcommand*\pandocbounded[1]{% scales image to fit in text height/width
   \sbox\pandoc@box{#1}%
-  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempa{\dimexpr 0.9\textheight \relax}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
   \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
   \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
   \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
@@ -930,12 +930,15 @@ $if(beamer)$
 $else$
 $if(disable-header-and-footer)$
 $else$
-\usepackage[headsepline,footsepline]{scrlayer-scrpage}
+\usepackage[headsepline,footsepline, automark, autooneside=false]{scrlayer-scrpage}
+
+\renewcommand*{\sectionmarkformat}{}
+\renewcommand*{\subsectionmarkformat}{}
 
 \newpairofpagestyles{eisvogel-header-footer}{
   \clearpairofpagestyles
   \ihead*{$if(header-left)$$header-left$$else$$title$$endif$}
-  \chead*{$if(header-center)$$header-center$$else$\rightmark$endif$}
+  \chead*{$if(header-center)$$header-center$$else$\ifstr{\leftmark}{\rightmark}{}{\rightmark}$endif$}
   \ohead*{$if(header-right)$$header-right$$else$\MakeUppercase{\leftmark}$endif$}
   \ifoot*{$if(footer-left)$$footer-left$$else$$for(author)$$author$$sep$, $endfor$$endif$}
   \cfoot*{$if(footer-center)$$footer-center$$else$$endif$}
@@ -943,8 +946,6 @@ $else$
   \addtokomafont{pageheadfoot}{\upshape}
 }
 \pagestyle{eisvogel-header-footer}
-\renewcommand{\subsectionmark}[1]{\markright{#1}}
-\renewcommand{\sectionmark}[1]{\markleft{#1}}
 
 $if(book)$
 \deftripstyle{ChapterStyle}{}{}{}{}{\pagemark}{}

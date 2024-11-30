@@ -1,6 +1,7 @@
 #!/bin/bash
 
 title=$(echo $(basename "$(pwd)") | awk '{print toupper($0)}')
+root_dir=$(git rev-parse --show-toplevel)
 
 generate() {
     cat << EOF > "$title.md"
@@ -41,22 +42,25 @@ EOF
                 echo -e "\n\`\`\`" >> "$title.md"
             done
         fi
+        # echo "\clearpage" >> "$title.md"
         echo "## screenshot" >> "$title.md"
         find "$project/screenshots" -name "*.png" -type f | while IFS= read -r image; do
             if [[ -f "$image" ]]; then
-                echo "!["$(basename "${image%.png}")"]($image){ width=250px }" >> "$title.md"
+                echo "!["$(basename "${image%.png}")"]($image)" >> "$title.md"
                 printf "\n\n" >> "$title.md"
             fi
         done
-        echo "<div style=\"page-break-after: always\; visibility: hidden\">" >> "$title.md"
-        echo "\pagebreak" >> "$title.md"
-        echo "</div>" >> "$title.md"
-        echo "" >> "$title.md"
+        echo "\clearpage" >> "$title.md"
     done
 }
 
 render() {
-    pandoc "$title.md" -o "$title.pdf" --template=$(git rev-parse --show-toplevel)/.github/template.latex --listings --number-sections --embed-resources && rm -f "$title.md"
+    mkdir -p "$root_dir/dokumentasi"
+    pandoc "$title.md" -o "$root_dir/dokumentasi/$title.pdf" \
+    --from markdown \
+    --template=$root_dir/.github/eisvogel.latex \
+    --pdf-engine=pdflatex \
+    --listings --number-sections --embed-resources && rm -f "$title.md"
 }
 
 generate "$1" "$2" && render
