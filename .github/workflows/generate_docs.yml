@@ -76,8 +76,12 @@ jobs:
 
       - name: Upload all to Google Drive (optional)
         uses: adityak74/google-drive-upload-git-action@main
+        env:
+          folder_id: ${{ secrets.FOLDER_ID }}
+          credentials: ${{ secrets.CREDENTIALS }}
         with:
           filename: ./dokumentasi/*.pdf
           credentials: ${{ secrets.CREDENTIALS }}
           folderId: ${{ secrets.FOLDER_ID }}
           overwrite: true
+        if: ${{ env.FOLDER_ID && env.CREDENTIALS }}
