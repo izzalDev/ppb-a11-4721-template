@@ -1,0 +1,87 @@
+name: Generate Documentation
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+    id-token: write
+    pages: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install TeX Live packages
+        uses: teatimeguest/setup-texlive-action@v3
+        with:
+          package-file: |
+            ./.github/template_deps.txt
+            ./.github/basictex_deps.txt
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Install Pandoc (specific version)
+        uses: r-lib/actions/setup-pandoc@v2
+        with:
+          pandoc-version: 3.5
+
+      - name: Run documentation script (conditional execution)
+        run: |
+          find . -type d \
+          \( -name 'praktikum_1[0-4]' \
+          -o -name 'praktikum_[0-9]' \
+          -o -name 'uts' -o -name 'uas' \) \
+          -maxdepth 1 \
+          -execdir bash -c 'cd "{}" && ../.github/docs.sh "${{ vars.NAMA }}" "${{ vars.NIM }}"' \;
+
+      - name: Generate html file for documentation
+        run: |
+            echo "[" > files.json
+            first=1
+            find . -type f -name "*.pdf" | while read -r file; do
+                size=$(du -h "$file" | cut -f1)
+                if [ $first -eq 1 ]; then
+                    echo "{ \"name\": \"$(basename $file)\", \"size\": \"$size\" }" >> files.json
+                    first=0
+                else
+                    echo ", { \"name\": \"$(basename $file)\", \"size\": \"$size\" }" >> files.json
+                fi
+            done
+            echo "]" >> files.json
+            cp ../.github/index.html ./index.html
+        working-directory: dokumentasi
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dokumentasi
+          path: ./dokumentasi/*.pdf
+        if: ${{ success() }}
+
+      - name: Upload github pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dokumentasi
+        if: ${{ success() }}
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Upload all to Google Drive (optional)
+        uses: adityak74/google-drive-upload-git-action@main
+        env:
+          folder_id: ${{ secrets.FOLDER_ID }}
+          credentials: ${{ secrets.CREDENTIALS }}
+        with:
+          filename: ./dokumentasi/*.pdf
+          credentials: ${{ secrets.CREDENTIALS }}
+          folderId: ${{ secrets.FOLDER_ID }}
+          overwrite: true
+        if: ${{ env.folder_id && env.credentials }}
