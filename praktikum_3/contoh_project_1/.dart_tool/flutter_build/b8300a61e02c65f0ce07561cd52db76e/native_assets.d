@@ -1,1 +1,0 @@
- /Users/izzal/Developer/ppb-a11-4721-template/praktikum_1/contoh_project_1/.dart_tool/flutter_build/b8300a61e02c65f0ce07561cd52db76e/native_assets.yaml: 
