@@ -17,55 +17,50 @@
 - IDE Visual Studio Code
 
 ## Instalasi
-1. pastikan anda login di github & sudah melakukan 2fa (wajib sebagai requirement untuk menjalankan github action)
-2. Tekan tombol star (bintang) di pojok kanan atas sebagai dukungan anda kepada kami
-<img width="1280" alt="Screenshot 2024-12-02 at 13 21 43" src="https://github.com/user-attachments/assets/692b1574-7861-4d53-beee-0a5b15b96c1b">
-3. Buat repository baru dengan template repository ini, dengan cara klik "Use this template" -> "Create a new repository"
-<img width="1280" alt="Screenshot 2024-12-02 at 13 13 54" src="https://github.com/user-attachments/assets/d4f79066-475a-4e3f-a0fd-752d95070e67">
-<img width="1280" alt="Screenshot 2024-12-02 at 13 14 01" src="https://github.com/user-attachments/assets/fa03d6aa-db0b-4a93-a732-184c1769c82d">
-4. Tulis nama repository sesuai keinginan pada field "Repository name"
-<img width="1280" alt="Screenshot 2024-12-02 at 13 14 24" src="https://github.com/user-attachments/assets/1ba54b50-2cc3-4b9c-9eba-54cf0d36cf94">
-5. Pastikan visibilitas repository sebagai "Public" agar fitur github pages nantinya bisa digunakan
-<img width="1280" alt="Screenshot 2024-12-02 at 13 14 32" src="https://github.com/user-attachments/assets/6049a0e8-4dbf-4c82-a2c3-7ad413e7bd99">
-6. Tekan "Create repository" untuk menginisiasi repository
-<img width="1280" alt="Screenshot 2024-12-02 at 13 14 38" src="https://github.com/user-attachments/assets/e6c55edd-a0c2-4f65-91b1-e7b9dbdca334">
-7. Tunggu Github selesai membuat repositori
-<img width="1280" alt="Screenshot 2024-12-02 at 13 14 44" src="https://github.com/user-attachments/assets/0dd2efdc-e72d-4b1c-a136-bf686e37422d">
-8. tekan tombol "settings" untuk menyesuaikan repositori
-<img width="1280" alt="Screenshot 2024-12-02 at 13 15 11" src="https://github.com/user-attachments/assets/dd616b09-2701-49d4-83f4-2c51fa50c704">
-
-<img width="1280" alt="Screenshot 2024-12-02 at 13 17 41" src="https://github.com/user-attachments/assets/6b5692b5-7f50-4fb5-a3e5-714b3818b8ae">
-
-<img width="1280" alt="Screenshot 2024-12-02 at 13 17 45" src="https://github.com/user-attachments/assets/4ad8c8a1-a309-4559-ab4c-cfc45d8fb805">
-<img width="1280" alt="Screenshot 2024-12-02 at 13 17 52" src="https://github.com/user-attachments/assets/8e27d28b-79af-44c8-8706-cff9be08e699">
-<img width="1280" alt="Screenshot 2024-12-02 at 13 17 59" src="https://github.com/user-attachments/assets/1079616d-e411-4281-bacb-72e47510d6ca">
-<img width="1280" alt="Screenshot 2024-12-02 at 13 18 29" src="https://github.com/user-attachments/assets/9ad13a0a-b78b-46d9-940c-2c42d02418a0">
-
-<img width="1280" alt="Screenshot 2024-12-02 at 13 18 40" src="https://github.com/user-attachments/assets/0ba47f6b-abd1-4d91-8d7a-4d7d23d7d778">
-
-<img width="1280" alt="Screenshot 2024-12-02 at 13 19 03" src="https://github.com/user-attachments/assets/4e4620f9-a774-4b60-b436-58e344afd9aa">
-
-
-
-kdjsflj
-<img width="1280" alt="Screenshot 2024-12-02 at 13 15 20" src="https://github.com/user-attachments/assets/13cb89cf-397d-49b4-b615-0432d9875b72">
-<img width="1280" alt="Screenshot 2024-12-02 at 13 15 40" src="https://github.com/user-attachments/assets/b7e4a920-f2bf-417c-ab54-b0b4dbf42077">
-<img width="1280" alt="Screenshot 2024-12-02 at 13 19 16" src="https://github.com/user-attachments/assets/91226ff5-ef0b-4a23-8d08-562240aba7a5">
-
-
-<img width="1280" alt="Screenshot 2024-12-02 at 13 16 00" src="https://github.com/user-attachments/assets/412f676c-8a60-44a6-ba9d-1bf2f4be8a41">
-
-<img width="1280" alt="Screenshot 2024-12-02 at 13 16 05" src="https://github.com/user-attachments/assets/be2fa88d-9a8b-4b8f-8f4c-f40cedbdbdaa">
-<img width="1280" alt="Screenshot 2024-12-02 at 13 16 20" src="https://github.com/user-attachments/assets/42256965-8ae5-4e87-b533-b58b61dc3057">
-<img width="1280" alt="Screenshot 2024-12-02 at 13 21 00" src="https://github.com/user-attachments/assets/794c0e70-8415-433b-9083-50acf9698fb6">
-
-
-
-3. Clone repository yang sudah dibuat
-4. Buka projek di Visual Studio Code
-5. Pastikan semua rekomendasi extension terinstall
-6. Menambahkan Variable ke repositori (optional)
-
+1. Pastikan Anda sudah login ke GitHub dan telah mengaktifkan 2FA (Two-Factor Authentication), karena ini merupakan syarat wajib untuk menjalankan GitHub Actions.
+2. Tekan tombol **Star** di pojok kanan atas repository ini sebagai bentuk dukungan Anda.
+   ![Screenshot](https://github.com/user-attachments/assets/692b1574-7861-4d53-beee-0a5b15b96c1b)
+3. Buat repository baru menggunakan template ini dengan cara klik **Use this template** -> **Create a new repository**.
+   ![Screenshot](https://github.com/user-attachments/assets/d4f79066-475a-4e3f-a0fd-752d95070e67)
+   ![Screenshot](https://github.com/user-attachments/assets/fa03d6aa-db0b-4a93-a732-184c1769c82d)
+4. Isi field **Repository name** sesuai keinginan Anda.
+   ![Screenshot](https://github.com/user-attachments/assets/1ba54b50-2cc3-4b9c-9eba-54cf0d36cf94)
+5. Pastikan visibilitas repository diatur sebagai **Public** agar fitur GitHub Pages dapat digunakan.
+   ![Screenshot](https://github.com/user-attachments/assets/6049a0e8-4dbf-4c82-a2c3-7ad413e7bd99)
+6. Tekan tombol **Create repository** untuk menginisialisasi repository.
+   ![Screenshot](https://github.com/user-attachments/assets/e6c55edd-a0c2-4f65-91b1-e7b9dbdca334)
+7. Tunggu hingga GitHub selesai membuat repository.
+   ![Screenshot](https://github.com/user-attachments/assets/0dd2efdc-e72d-4b1c-a136-bf686e37422d)
+8. Buka menu **Settings** untuk menyesuaikan pengaturan repository.
+   ![Screenshot](https://github.com/user-attachments/assets/dd616b09-2701-49d4-83f4-2c51fa50c704)
+9. Klik dropdown **Secrets and variables**.
+   ![Screenshot](https://github.com/user-attachments/assets/6b5692b5-7f50-4fb5-a3e5-714b3818b8ae)
+10. Pilih opsi **Actions**.
+    ![Screenshot](https://github.com/user-attachments/assets/4ad8c8a1-a309-4559-ab4c-cfc45d8fb805)
+11. Buka tab **Variables**.
+    ![Screenshot](https://github.com/user-attachments/assets/8e27d28b-79af-44c8-8706-cff9be08e699)
+12. Klik tombol **New repository variable**.
+    ![Screenshot](https://github.com/user-attachments/assets/1079616d-e411-4281-bacb-72e47510d6ca)
+13. Isi field **Name** dengan `NAMA` dan **Value** dengan nama Anda, lalu tekan **Add variable**.
+    ![Screenshot](https://github.com/user-attachments/assets/9ad13a0a-b78b-46d9-940c-2c42d02418a0)
+14. Tekan tombol **New repository variable** kembali.
+    ![Screenshot](https://github.com/user-attachments/assets/0ba47f6b-abd1-4d91-8d7a-4d7d23d7d778)
+15. Isi field **Name** dengan `NIM` dan **Value** dengan NIM Anda, lalu tekan **Add variable**.
+    ![Screenshot](https://github.com/user-attachments/assets/4e4620f9-a774-4b60-b436-58e344afd9aa)
+16. Buka menu **Pages** di sidebar.
+    ![Screenshot](https://github.com/user-attachments/assets/13cb89cf-397d-49b4-b615-0432d9875b72)
+17. Ubah dropdown **Source** menjadi **GitHub Actions**.
+    ![Screenshot](https://github.com/user-attachments/assets/b7e4a920-f2bf-417c-ab54-b0b4dbf42077)
+18. Kembali ke dashboard repository dengan mengklik nama repository di bagian atas.
+    ![Screenshot](https://github.com/user-attachments/assets/91226ff5-ef0b-4a23-8d08-562240aba7a5)
+19. Buka menu pengaturan detail dengan menekan **Settings**.
+    ![Screenshot](https://github.com/user-attachments/assets/412f676c-8a60-44a6-ba9d-1bf2f4be8a41)
+20. Centang opsi **Use your GitHub Pages website**, lalu tekan **Save changes**.
+    ![Screenshot](https://github.com/user-attachments/assets/be2fa88d-9a8b-4b8f-8f4c-f40cedbdbdaa)
+21. Tunggu hingga ikon **Pending** berubah menjadi tanda centang.
+    ![Screenshot](https://github.com/user-attachments/assets/42256965-8ae5-4e87-b533-b58b61dc3057)
+22. Klik link di bawah **About** untuk melihat dokumentasi yang telah dibuat.
+    ![Screenshot](https://github.com/user-attachments/assets/794c0e70-8415-433b-9083-50acf9698fb6)
 ## Integrasi dengan Google Drive (opsional)
 1. Buka `https://console.cloud.google.com/` di browser
 2. Buat project baru di Google Cloud Console
