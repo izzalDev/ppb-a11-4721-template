@@ -1,4 +1,6 @@
 # TEMPLATE PROJECT PRAKTIKUM PPB 4721
+<div align="justify">Template ini dirancang untuk mendukung pembelajaran praktikum Pemrograman Perangkat Bergerak (PPB) 4721 dengan menggunakan Flutter sebagai kerangka kerja utama. Template ini mempermudah pengelolaan proyek dengan struktur yang terorganisasi, sekaligus memperkenalkan penggunaan Git untuk version control dan GitHub sebagai platform repository serta alat CI/CD. Dengan template ini, Anda dapat memahami pentingnya pengelolaan proyek berbasis version control, kolaborasi tim, dan pipeline otomatis. Dukungan Anda sangat berarti—cukup dengan memberikan bintang (Star) atau mengikuti profil GitHub saya untuk membantu saya, yang kurang mahir dalam mempromosikan diri di media sosial. Selamat belajar! 🎉</div>
+
 
 ## Daftar Isi
 1. [Requirements](#requirements)
