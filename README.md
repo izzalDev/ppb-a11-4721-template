@@ -11,12 +11,15 @@
 5. [Kontribusi](#kontribusi)
 
 ## Requirements
-- Akun Github
+- Akun Github dan sudah melakukan 2FA (untuk menjalankan Github Action)
 - Version Control (Git)
 - Flutter SDK
 - IDE Visual Studio Code
 
 ## Instalasi
+1. pastikan anda login di github & sudah melakukan 2fa (wajib sebagai requirement untuk menjalankan github action)
+2. Tekan tombol star (bintang) di pojok kanan atas sebagai dukungan anda kepada kami
+
 1. Buat repository baru dengan template repository ini
 2. Clone repository yang sudah dibuat
 3. Buka projek di Visual Studio Code
