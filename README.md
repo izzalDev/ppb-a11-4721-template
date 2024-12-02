@@ -18,13 +18,26 @@
 
 ## Instalasi
 1. pastikan anda login di github & sudah melakukan 2fa (wajib sebagai requirement untuk menjalankan github action)
-2. Tekan tombol star (bintang) di pojok kanan atas sebagai dukungan anda kepada kami
+   
+3. Tekan tombol star (bintang) di pojok kanan atas sebagai dukungan anda kepada kami
+<img width="1280" alt="Screenshot 2024-12-02 at 13 21 43" src="https://github.com/user-attachments/assets/692b1574-7861-4d53-beee-0a5b15b96c1b">
 
 1. Buat repository baru dengan template repository ini
-2. Clone repository yang sudah dibuat
-3. Buka projek di Visual Studio Code
-4. Pastikan semua rekomendasi extension terinstall
-5. Menambahkan Variable ke repositori (optional)
+   <img width="1280" alt="Screenshot 2024-12-02 at 13 13 54" src="https://github.com/user-attachments/assets/d4f79066-475a-4e3f-a0fd-752d95070e67">
+<img width="1280" alt="Screenshot 2024-12-02 at 13 14 01" src="https://github.com/user-attachments/assets/fa03d6aa-db0b-4a93-a732-184c1769c82d">
+<img width="1280" alt="Screenshot 2024-12-02 at 13 14 24" src="https://github.com/user-attachments/assets/1ba54b50-2cc3-4b9c-9eba-54cf0d36cf94">
+<img width="1280" alt="Screenshot 2024-12-02 at 13 14 32" src="https://github.com/user-attachments/assets/6049a0e8-4dbf-4c82-a2c3-7ad413e7bd99">
+<img width="1280" alt="Screenshot 2024-12-02 at 13 14 38" src="https://github.com/user-attachments/assets/e6c55edd-a0c2-4f65-91b1-e7b9dbdca334">
+<img width="1280" alt="Screenshot 2024-12-02 at 13 14 44" src="https://github.com/user-attachments/assets/0dd2efdc-e72d-4b1c-a136-bf686e37422d">
+ 
+<img width="1280" alt="Screenshot 2024-12-02 at 13 15 11" src="https://github.com/user-attachments/assets/dd616b09-2701-49d4-83f4-2c51fa50c704">
+<img width="1280" alt="Screenshot 2024-12-02 at 13 15 20" src="https://github.com/user-attachments/assets/13cb89cf-397d-49b4-b615-0432d9875b72">
+
+
+3. Clone repository yang sudah dibuat
+4. Buka projek di Visual Studio Code
+5. Pastikan semua rekomendasi extension terinstall
+6. Menambahkan Variable ke repositori (optional)
 
 ## Integrasi dengan Google Drive (opsional)
 1. Buka `https://console.cloud.google.com/` di browser
