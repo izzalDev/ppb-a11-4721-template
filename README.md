@@ -64,13 +64,87 @@
 22. Klik link di bawah **About** untuk melihat dokumentasi yang telah dibuat.
     ![Screenshot](https://github.com/user-attachments/assets/794c0e70-8415-433b-9083-50acf9698fb6)
 ## Integrasi dengan Google Drive (opsional)
-1. Buka `https://console.cloud.google.com/` di browser
-2. Buat project baru di Google Cloud Console
-3. Aktifkan API Google Drive dan buat kredensial OAuth 2.0
-4. Unduh file kredensial (biasanya dalam format JSON) dan simpan di dalam projek
-5. Instal package `googleapis` dan `googleapis_auth` pada Flutter menggunakan `pub get`
-6. Implementasikan autentikasi OAuth 2.0 untuk mengakses Google Drive
-7. Konfigurasikan API untuk melakukan operasi yang diinginkan seperti upload, download, atau listing file
+1. Akses Google Cloud Console  
+Buka [https://console.cloud.google.com/](https://console.cloud.google.com/) di browser Anda.
+
+2. Navigasi ke APIs & Services  
+Klik **APIs & Services** pada menu utama.  
+![APIs & Services](https://github.com/user-attachments/assets/ad2485a7-b1c6-44a3-b823-9d3ff215a6df)
+
+3. Buat Proyek Baru  
+Klik tab **Credentials** kemudian tekan tombol **Create Project**.  
+![Create Project](https://github.com/user-attachments/assets/4ef0f9b2-8ddb-474c-b243-f296a50ef2a3)
+
+4. Masukkan Nama Proyek  
+Tulis nama proyek pada kolom **Project Name**, kemudian tekan tombol **Create**.  
+![Project Name](https://github.com/user-attachments/assets/2aebde58-242e-46c2-afc2-404472aa5a9d)
+
+5. Tunggu Proyek Selesai Dibuat  
+Tunggu hingga proses pembuatan proyek selesai.  
+![Project Created](https://github.com/user-attachments/assets/a7540da9-919b-407a-af01-1fb240fcaf45)
+
+6. Kelola Service Accounts  
+Klik **Manage Service Accounts** untuk mengelola akun layanan.  
+![Manage Service Accounts](https://github.com/user-attachments/assets/0acda535-d0be-4c3c-bd8e-29721c7f44e7)
+
+7. Buat Service Account Baru  
+Klik **Create Service Account** untuk membuat akun layanan baru.  
+![Create Service Account](https://github.com/user-attachments/assets/10620e99-5328-4e56-8568-42d31018c192)
+
+8. Isi Nama Akun Layanan  
+Isi kolom **Service Account Name**, salin alamat email, dan klik **Done**.  
+![Service Account Name](https://github.com/user-attachments/assets/91400742-89b9-4f21-9936-1b0ba534ce32)  
+![Copy Email Address](https://github.com/user-attachments/assets/b2c653cc-ab3b-4c1b-a31f-3c3cb54f8b1d)
+
+9. Kelola Kunci Akun Layanan  
+Klik **Action** pada akun layanan yang dibuat, lalu pilih **Manage Keys**.  
+![Manage Keys](https://github.com/user-attachments/assets/4f10c200-af0e-409e-9b45-53638975e334)
+
+10. Buat Kunci Baru  
+Tekan **Add Key**, pilih **Create New Key**, dan pilih tipe **JSON**.  
+![Add Key](https://github.com/user-attachments/assets/49e5a28b-9b41-4ac9-a24e-4512fd2bec57)  
+![Select JSON](https://github.com/user-attachments/assets/fad19020-031f-4e45-a924-9a27ff684bea)
+
+11. Simpan File JSON  
+File JSON akan diunduh otomatis. Simpan file ini dengan aman.
+
+12. Berikan Akses ke Google Drive  
+Buka folder Google Drive, klik **Dibagikan**, tambahkan alamat email akun layanan sebagai editor, dan tekan **Bagikan**.  
+![Share Folder](https://github.com/user-attachments/assets/7db494b9-a019-4cb9-95dd-553780090c0e)  
+![Add Editor](https://github.com/user-attachments/assets/9f520e7f-2d5e-4d71-b86a-6bf324ecc9c9)
+
+13. Salin Folder ID Google Drive  
+Salin bagian **Folder ID** dari URL folder. Contoh:  
+`https://drive.google.com/drive/u/1/folders/1jTQi9ApagFOppBTYl9Q0bAiiSf6R1yi7`  
+Folder ID adalah: `1jTQi9ApagFOppBTYl9Q0bAiiSf6R1yi7`.
+
+14. Tambahkan Secrets di GitHub  
+Buka menu **Settings** di GitHub, pilih **Actions**, dan klik **New Repository Secret**.  
+![New Repository Secret](https://github.com/user-attachments/assets/db1ffecb-4311-44d4-ba29-2361e184abf8)  
+
+Isi:  
+- **Name**: `FOLDER_ID`  
+- **Secret**: Folder ID yang disalin sebelumnya.  
+
+Klik **Add Secret**.  
+![Add Folder ID](https://github.com/user-attachments/assets/55a84830-a120-4a32-a3ff-18622c9462d8)
+
+15. Encode File JSON ke Base64  
+Gunakan perintah berikut di terminal:  
+`base64 <nama_file>.json > encoded_credentials.txt`  
+Salin isi file `encoded_credentials.txt`.
+
+16. Tambahkan Secret untuk Credentials  
+Tambahkan secret baru:  
+- **Name**: `CREDENTIALS`  
+- **Secret**: Hasil Base64 encode.  
+
+Klik **Add Secret**.  
+![Add Credentials Secret](https://github.com/user-attachments/assets/8d3d5626-5e52-4ddd-9c7a-eba8e9d27822)
+
+17. Selesai  
+Setiap kali Anda melakukan push ke repositori, GitHub Actions akan membuat file PDF dan mengunggahnya ke Google Drive.
+
 
 ## Penggunaan
 
