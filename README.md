@@ -8,7 +8,6 @@
 3. [Integrasi dengan Google Drive (opsional)](#integrasi-dengan-google-drive-opsional)
 4. [Penggunaan](#penggunaan)
    - [Membuat projek baru](#membuat-projek-baru)
-   - [Menyimpan projek ke remote repositori](#menyimpan-projek-ke-remote-repositori)
    - [Generate dokumentasi](#generate-dokumentasi)
 5. [Kontribusi](#kontribusi)
 
@@ -148,23 +147,42 @@ Setiap kali Anda melakukan push ke repositori, GitHub Actions akan membuat file 
 
 ## Penggunaan
 
-### Membuat projek baru
-1. Buka terminal di Visual Studio Code dan navigasi ke folder dimana projek akan disimpan.
-2. Jalankan perintah `flutter create nama_projek` untuk membuat projek Flutter baru.
-3. Tambahkan file atau dependensi yang dibutuhkan sesuai dengan template ini.
+#### Membuat projek baru  
+1. Clone remote repository ke lokal dengan perintah:  
+   git clone <URL_REPOSITORY>  
+   Alternatif lain, gunakan *Cloud IDE* yang mendukung Flutter, seperti Project IDX, jika tidak ingin bekerja di lingkungan lokal.  
+2. Buat Folder Praktikum:  
+   - Buat folder dengan nama `praktikum_X`, di mana `X` adalah angka antara 1-14 sesuai nomor praktikum.  
+   - Jika folder tersebut digunakan untuk tugas akhir, gunakan nama `uts` atau `uas` sebagai nama folder.  
+3. Inisialisasi Proyek Flutter:  
+   Pindah ke dalam folder yang baru dibuat dan inisialisasi proyek Flutter
+4. Tambahkan Folder Screenshots:  
+   Buat folder bernama `screenshots` di dalam proyek untuk menyimpan tangkapan layar hasil kerja Anda.  
+5. Commit dan Push Perubahan:  
+   Setelah semua langkah selesai, lakukan commit dan push ke GitHub:
+   ```bash 
+   git add .  
+   git commit -m "Inisialisasi proyek praktikum_X"  
+   git push -u origin <branch>  
+   Ganti `<branch>` dengan nama branch yang sesuai, seperti `main` atau `praktikum_X`.
+   ```
 
-### Menyimpan projek ke remote repositori
-1. Inisialisasi Git di folder projek dengan menjalankan perintah `git init`.
-2. Tambahkan remote repository dengan menjalankan perintah `git remote add origin <URL_REPOSITORY>`.
-3. Tambahkan perubahan pada repositori dengan `git add .`.
-4. Commit perubahan dengan `git commit -m "Initial commit"`.
-5. Push ke repositori dengan `git push -u origin master`.
+#### Generate Dokumentasi  
+- Dokumentasi proyek akan di-*generate* secara otomatis oleh GitHub Actions saat Anda melakukan *push* ke repository.
+- Dokumentasi akan diunggah ke lokasi yang telah ditentukan sesuai dengan pengaturan repository Anda.
 
-### Generate dokumentasi
-1. Gunakan tools seperti `dartdoc` untuk menghasilkan dokumentasi API dari komentar dalam kode.
-2. Jalankan perintah `dart doc` di terminal untuk menghasilkan dokumentasi dalam format HTML.
-3. Dokumentasi yang dihasilkan dapat ditemukan di folder `doc/api`.
-
-## Kontribusi
-1. Fork repository ini dan buat branch baru untuk fitur yang ingin dikembangkan.
-2. Lakukan perubahan dan
+## Kontribusi  
+1. Fork Repository:  
+   Fork repository ini ke akun GitHub Anda untuk memulai pengembangan.  
+2. Buat Branch Baru:  
+   Buat branch baru untuk fitur atau perbaikan yang ingin Anda kembangkan:  
+   git checkout -b nama_fitur  
+3. Lakukan Perubahan:  
+   Lakukan perubahan pada kode sesuai dengan fitur yang ingin ditambahkan atau perbaikan yang dilakukan. Pastikan perubahan Anda terdokumentasi dengan baik di dalam komentar kode.  
+4. Commit dan Push:  
+   - Commit perubahan Anda dengan pesan yang deskriptif:  
+     `git commit -m "Menambahkan fitur nama_fitur"  `
+   - Push branch baru Anda ke repository fork:  
+     `git push origin nama_fitur  `
+5. Buat Pull Request:  
+   Setelah perubahan selesai, buat Pull Request (PR) ke repository utama dan tambahkan deskripsi tentang perubahan yang dilakukan untuk ditinjau oleh kontributor lainnya.
